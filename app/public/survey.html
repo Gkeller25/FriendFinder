@@ -1,11 +1,11 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
+    
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
+    
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     
@@ -14,239 +14,210 @@
   </head>
   <body>
 
-<!-- Modal -->
-<div class="modal fade" id="resultModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="resultModalLabel" aria-hidden="true">
+
+    <div class="modal fade" id="resultModal" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="resultModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="resultModalLabel">Closest Friend Match</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-                    
-                <div class="container-fluid">
-                    <div class="row">
-                        <div class="col-12 text-center">
-                            <img id="resultPic" src="" alt="Responsive image">
-                        </div>                           
-                        <div class="col-12 text-center mt-3">
-                            <h4 id="friendName"></h4>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="resultModalLabel">Closest Friend Match</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">         
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12 text-center">
+                                <img id="resultPic" src="" alt="Responsive image">
+                            </div>                           
+                            <div class="col-12 text-center mt-3">
+                                <h4 id="friendName"></h4>
+                            </div>
                         </div>
                     </div>
                 </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" >Close</button>
+                </div>
             </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal" >Close</button>
-              
-            </div>
-          </div>
         </div>
     </div>
 
     <div class="container">
-  
-      <div class="jumbotron">
-        <h1 class="text-center"><span class="fa fa-group"></span> Friend Finder</h1>
-        <hr>
-        <h2 class="text-center">Find your compatible Friend</h2>
-        <br>
-  
-        <div id="nav" class="text-center">
-          
-          <a href="/"><button class="btn btn-lg btn-default"><span class="fa fa-home"></span></button></a>
-        </div>
-      </div>
-  
-      <div class="row">
-        <div class="col-lg-12">
-  
-          <!-- Reservation Page -->
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h4 class="panel-title">About You</h4>
+    
+        <div class="jumbotron">
+            <h1 class="text-center"><span class="fa fa-group"></span> Friend Finder</h1>
+            <hr>
+            <h2 class="text-center">Find your compatible Friend</h2>
+            <br>
+            <div id="nav" class="text-center">
+                <a href="/"><button class="btn btn-lg btn-default"><span class="fa fa-home"></span></button></a>
             </div>
-            <div class="panel-body">
-  
-              <form role="form">
-  
-                <div class="form-group">
-                  <label for="reserve-name">Name(Required)</label>
-                  <input type="text" class="form-control" id="reserve-name" required="">
+        </div>
+    
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">About You</h4>
+                    </div>
+                    <div class="panel-body">
+                
+                        <form role="form">
+                        
+                            <div class="form-group">
+                                <label for="reserve-name">Name(Required)</label>
+                                <input type="text" class="form-control" id="reserve-name" required="">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="reserve-image">Link to Photo Image (Required)</label>
+                                <input type="text" class="form-control" id="reserve-image" required="">
+                            </div>
+                            <hr>
+
+                            <div class="form-group">
+                                <h3>Question 1</h3>
+                                <h3>Your mind is always buzzing with unexplored ideas and plans.</h3>
+                                <select class="chosen-select" id="q1" required>
+                                    <option value=""></option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div> 
+
+                            <div class="form-group">
+                                <h3>Question 2</h3>
+                                <h3>Generally speaking, you rely more on your experience than your imagination.</h3>
+                                <select class="chosen-select" id="q2" required>
+                                    <option value=""></option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <h3>Question 3</h3>
+                                <h3>You find it easy to stay relaxed and focused even when there is some pressure.</h3>
+                                <select class="chosen-select" id="q3" >
+                                    <option value=""></option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <h3>Question 4</h3>
+                                <h3>You rarely do something just out of sheer curiosity.</h3>                           
+                                <select class="chosen-select" id="q4" >
+                                    <option value=""></option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <h3>Question 5</h3>
+                                <h3>People can rarely upset you.</h3>                            
+                                <select class="chosen-select" id="q5" >
+                                    <option value=""></option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <h3>Question 6</h3>
+                                <h3>It is often difficult for you to relate to other people’s feelings.</h3>                            
+                                <select class="chosen-select" id="q6" >
+                                    <option value=""></option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <h3>Question 7</h3>
+                                <h3>In a discussion, truth should be more important than people’s sensitivities.</h3>                            
+                                <select class="chosen-select" id="q7" >
+                                    <option value=""></option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <h3>Question 8</h3>
+                                <h3>You rarely get carried away by fantasies and ideas.</h3>
+                                <select class="chosen-select" id="q8" >
+                                    <option value=""></option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <h3>Question 9</h3>
+                                <h3>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</h3>
+                                <select class="chosen-select" id="q9" >
+                                    <option value=""></option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <h3>Question 10</h3>
+                                <h3>You feel more energetic after spending time with a group of people.</h3>
+                                <select class="chosen-select" id="q10" >
+                                    <option value=""></option>
+                                    <option value="1">1 (Strongly Disagree)</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5 (Strongly Agree)</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="btn btn-primary submit" >Submit</button>
+                        </form>
+                    </div>
                 </div>
-  
-                <div class="form-group">
-                  <label for="reserve-image">Link to Photo Image (Required)</label>
-                  <input type="text" class="form-control" id="reserve-image" required="">
-                </div>
-                <hr>
-                <div class="form-group">
-                    <h3>Question 1</h3>
-                    <h3>Your mind is always buzzing with unexplored ideas and plans.</h3>
-        
-                    <select class="chosen-select" id="q1" required>
-                        <option value=""></option>
-                        <option value="1">1 (Strongly Disagree)</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5 (Strongly Agree)</option>
-                    </select>
-               </div>
-              
-
-               <div class="form-group">
-                    <h3>Question 2</h3>
-                    <h3>Generally speaking, you rely more on your experience than your imagination.</h3>
-        
-                    <select class="chosen-select" id="q2" required>
-                        <option value=""></option>
-                        <option value="1">1 (Strongly Disagree)</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5 (Strongly Agree)</option>
-                    </select>
-               </div>
-              
-
-               <div class="form-group">
-                    <h3>Question 3</h3>
-                    <h3>You find it easy to stay relaxed and focused even when there is some pressure.</h3>
-        
-                    <select class="chosen-select" id="q3" >
-                        <option value=""></option>
-                        <option value="1">1 (Strongly Disagree)</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5 (Strongly Agree)</option>
-                    </select>
-               </div>
-
-                             
-               <div class="form-group">
-                    <h3>Question 4</h3>
-                    <h3>You rarely do something just out of sheer curiosity.</h3>
-        
-                    <select class="chosen-select" id="q4" >
-                        <option value=""></option>
-                        <option value="1">1 (Strongly Disagree)</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5 (Strongly Agree)</option>
-                    </select>
-               </div>
-
-                             
-               <div class="form-group">
-                    <h3>Question 5</h3>
-                    <h3>People can rarely upset you.</h3>
-        
-                    <select class="chosen-select" id="q5" >
-                        <option value=""></option>
-                        <option value="1">1 (Strongly Disagree)</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5 (Strongly Agree)</option>
-                    </select>
-               </div>
-
-                             
-               <div class="form-group">
-                    <h3>Question 6</h3>
-                    <h3>It is often difficult for you to relate to other people’s feelings.</h3>
-        
-                    <select class="chosen-select" id="q6" >
-                        <option value=""></option>
-                        <option value="1">1 (Strongly Disagree)</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5 (Strongly Agree)</option>
-                    </select>
-               </div>
-
-                             
-               <div class="form-group">
-                    <h3>Question 7</h3>
-                    <h3>In a discussion, truth should be more important than people’s sensitivities.</h3>
-        
-                    <select class="chosen-select" id="q7" >
-                        <option value=""></option>
-                        <option value="1">1 (Strongly Disagree)</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5 (Strongly Agree)</option>
-                    </select>
-               </div>
-
-                             
-               <div class="form-group">
-                    <h3>Question 8</h3>
-                    <h3>You rarely get carried away by fantasies and ideas.</h3>
-        
-                    <select class="chosen-select" id="q8" >
-                        <option value=""></option>
-                        <option value="1">1 (Strongly Disagree)</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5 (Strongly Agree)</option>
-                    </select>
-               </div>
-
-                             
-               <div class="form-group">
-                    <h3>Question 9</h3>
-                    <h3>You think that everyone’s views should be respected regardless of whether they are supported by facts or not.</h3>
-        
-                    <select class="chosen-select" id="q9" >
-                        <option value=""></option>
-                        <option value="1">1 (Strongly Disagree)</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5 (Strongly Agree)</option>
-                    </select>
-               </div>
-
-                             
-               <div class="form-group">
-                    <h3>Question 10</h3>
-                    <h3>You feel more energetic after spending time with a group of people.</h3>
-        
-                    <select class="chosen-select" id="q10" >
-                        <option value=""></option>
-                        <option value="1">1 (Strongly Disagree)</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5 (Strongly Agree)</option>
-                    </select>
-               </div>
-
-               
-                <button type="submit" class="btn btn-primary submit" >Submit</button>
-              </form>
-  
             </div>
-          </div>
-  
         </div>
-      </div>
-  
-  
-      <footer class="footer">
-        <div class="container">
-          <p><a href="/api/tables">API Table Link</a> | <a href="/api/waitlist">API Wait List</a> | <a href="https://github.com/afhaque/HotRestaurant">GitHub Repo</a></p>
-        </div>
-      </footer>
-  
+    
+    
+        <footer class="footer">
+            <div class="container">
+                <p><a href="/api/tables">API Table Link</a> | <a href="/api/waitlist">API Wait List</a> | <a href="https://github.com/afhaque/HotRestaurant">GitHub Repo</a></p>
+            </div>
+        </footer>
+    
     </div>
   
 
@@ -266,127 +237,85 @@
       // Our api recognizes the route (/api/tables)... and then runs the associated code (found in api-routes.js).
       // In this case the associated code "saves" the data to the table-data.js file or waitinglist-data.js file
   
-      $(".submit").on("click", function(event) {
+    $(".submit").on("click", function(event) {
         event.preventDefault();
         var answers = [];
-  for(var i = 1; i < 11; i++){
-      if($("#q"+i).val() !== ""){
-        answers.push($("#q"+i).val());
-      } else {
-          return alert("Make sure all Fields are complete");
-      }
-  };
-  console.log(answers);
-
-        // Here we grab the form elements
+        for(var i = 1; i < 11; i++){
+            if($("#q"+i).val() !== ""){
+                answers.push($("#q"+i).val());
+            } else {
+                return alert("Make sure all Fields are complete");
+            }
+        };
+  
         var newFriend = {
-          name: $("#reserve-name").val().trim(),
-          photo: $("#reserve-image").val().trim(),
-          scores: answers
-         
+            name: $("#reserve-name").val().trim(),
+            photo: $("#reserve-image").val().trim(),
+            scores: answers 
         };
         if(newFriend.name === ""){
             return alert("Please fill in all Fields");
         } else if(newFriend.photo === ""){
             return alert("Please fill in all Fields");
         }
-        console.log(newFriend);
-  
-        // This line is the magic. It"s very similar to the standard ajax function we used.
-        // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".
-        // The callback is the response of the server. In our case, we set up code in api-routes that "returns" true or false
-        // depending on if a tables is available or not.
         
-       $.post("/api/friends", newFriend)
-          .then(function(data) {
-            console.log("working");
-        console.log(data);
-        $.get("/api/friends", function(data) {
-            console.log(data);
-        console.log(newFriend.scores);
-        var possibleMatches = [];
-        var tempHold = [];
-        var currentUser = newFriend;
+        $.post("/api/friends", newFriend)
+            .then(function(data) {
+                $.get("/api/friends", function(data) {
+                    var possibleMatches = [];
+                    var tempHold = [];
+                    var currentUser = newFriend;
+                    currentUser.match = {
+                        name: "",
+                        total_diff: 100
+                    };
 
-        currentUser.match = {
-            name: "",
-            total_diff: 100
-    };
-    console.log(currentUser);
-        if(data.length > 1){
-            $.each(data, function(i){
-        //for(var i = 0; i < data.length; i++){
+                    if(data.length > 1){
+                        $.each(data, function(i){
+                            var differences = [];
+                            var userFriend = data[i];
+                            if(userFriend.name !== currentUser.name){
+                                for(var j = 0; j < currentUser.scores.length; j++){
+                                    var num1 = parseInt(currentUser.scores[j]);
+                                    var num2 = parseInt(userFriend.scores[j]);
+                                    var outcome =  num1 - num2;
+                                    var comparison = Math.abs(outcome);
+                                    differences.push(comparison);
 
-//is therea a way to push object with a blank value that could be filled partially now and the rest later on?
+                                    function getSum(total, value, index, array) {
+                                        return total + value;
+                                    }
+                                }
 
-            var differences = [];
-            var userFriend = data[i];
-            if(userFriend.name !== currentUser.name){
-            // if (userFriend.name === newFriend.name){continue;
-                console.log("iterator for EACH loop:", i);
-                // var currentFriend = userFriend
-                    console.log("array of scores:", userFriend.scores);
-                for(var j = 0; j < currentUser.scores.length; j++){
-                        console.log("Nested For Loop iterator:", j);
-                        
-                    var num1 = parseInt(currentUser.scores[j]);
-                    var num2 = parseInt(userFriend.scores[j]);
-                    var outcome =  num1 - num2;
-                        console.log("result of user - compared Friend:", outcome);
-                    var comparison = Math.abs(outcome);
+                                var totalDifference = differences.reduce(getSum)
+                                var compFriend = {
+                                    name: userFriend.name,
+                                    photo: userFriend.photo,
+                                    total_diff: totalDifference
+                                };
 
-                    differences.push(comparison);
-                        console.log("result of user - compared Friend absolute value:", comparison);
-                        console.log("Array of question score differences:", differences);
-                    function getSum(total, value, index, array) {
-                        return total + value;
-                    }
+                                possibleMatches.push(compFriend);  
+                                var previousScore = currentUser.match.total_diff;
+                                
+                                if(previousScore > possibleMatches[i].total_diff){
+                                    currentUser.match = {
+                                        name: possibleMatches[i].name,
+                                        photo: possibleMatches[i].photo,
+                                        total_diff: possibleMatches[i].total_diff
+                                    };
+                                }
+                            }
+                        })
 
-                        }
-
-            var totalDifference = differences.reduce(getSum)
-            var compFriend = {
-            name: userFriend.name,
-            photo: userFriend.photo,
-            total_diff: totalDifference
-            };
-            possibleMatches.push(compFriend);  
-                console.log("Array of friends with their total difference in score from currentUser:", possibleMatches);
-                
-            var previousScore = currentUser.match.total_diff;
-                console.log("CurrentUsers Match score total difference:", previousScore);
-            if(previousScore > possibleMatches[i].total_diff){
-                currentUser.match = {
-                        name: possibleMatches[i].name,
-                        photo: possibleMatches[i].photo,
-                        total_diff: possibleMatches[i].total_diff
-                };
-
-            }
-     //how is it skipping straight to the correct value and not update the first correct then updating again if theres a new low?  
-       console.log("Full object of the last person added:", currentUser);
-}
-
-
-
-
-
-    })
-console.log("Full object of the last person added:", currentUser);
-
-$("#resultPic").attr("src", currentUser.match.photo);
-$("#friendName").text(currentUser.match.name);
-$('#resultModal').modal('show');
-$("button").on("click", function(){
-    window.location.href="/";
-})
-    } 
-
+                        $("#resultPic").attr("src", currentUser.match.photo);
+                        $("#friendName").text(currentUser.match.name);
+                        $('#resultModal').modal('show');
+                        $("button").on("click", function(){
+                            window.location.href="/";
+                        })
+                    }    
+                });
+            });
     });
-  
-          });
-  
-
-      });
   
   </script>
