@@ -214,7 +214,7 @@
     
         <footer class="footer">
             <div class="container">
-                <p><a href="/api/tables">API Table Link</a> | <a href="/api/waitlist">API Wait List</a> | <a href="https://github.com/afhaque/HotRestaurant">GitHub Repo</a></p>
+                <p><a href="/api/friends">API Friends Link</a> | <a href="https://github.com/Gkeller25/FriendFinder.git">GitHub Repo</a></p>
             </div>
         </footer>
     
@@ -263,7 +263,6 @@
             .then(function(data) {
                 $.get("/api/friends", function(data) {
                     var possibleMatches = [];
-                    var tempHold = [];
                     var currentUser = newFriend;
                     currentUser.match = {
                         name: "",
